@@ -1,0 +1,31 @@
+{
+  "name": "cryptocurrency-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/server.js",
+  "scripts": {
+    "react:dev": "webpack -d --watch",
+    "start": "nodemon server/server.js"
+  },
+  "author": "Faris Habib",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.8.0",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.8.6",
+    "semantic-ui-react": "^0.87.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
