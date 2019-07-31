@@ -12,7 +12,25 @@ class CoinList extends React.Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    axios.get('https://api.coincap.io/v2/assets')
+      .then(result => {
+        this.setState({
+          isLoaded: true,
+          assets: result.data
+      });
+        }, (err) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      );
+  }
 
-  render() {}
+  render() {
+    return <div>Testing </div>
+  }
 }
+
+export default CoinList;

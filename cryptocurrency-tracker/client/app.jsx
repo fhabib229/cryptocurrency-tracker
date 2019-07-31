@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from './components/Chart.jsx';
+import CoinList from './components/CoinList.jsx';
 
 
 class App extends React.Component {
@@ -12,7 +13,12 @@ class App extends React.Component {
   }
 
   render() {
-    return <Chart />
+    return (
+      <div>
+        <Chart />
+        <CoinList />
+      </div>
+    );
   }
 }
 
