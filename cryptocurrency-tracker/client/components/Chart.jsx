@@ -9,7 +9,7 @@ class Chart extends React.Component {
     this.state = {
       isLoaded: false,
       error: null,
-      data: {},
+      assets: {},
       options: {
         scales: {
           xAxes: [{
@@ -34,7 +34,7 @@ class Chart extends React.Component {
       .then(result => {
         this.setState({
           isLoaded: true,
-          data: result.data
+          assets: result.data
         });
       }, (err) => {
           this.setState({
@@ -46,13 +46,13 @@ class Chart extends React.Component {
   }
 
   render() {
-    const { isLoaded, error, data, options } = this.state;
+    const { isLoaded, error, assets, options } = this.state;
     if (error) {
       return <div>Error....{error.message}</div>
     } else if (!isLoaded) {
       return <div>Loading...</div>
     } else {
-      let cryptoData = data.data.filter(element => element.time >= 1559347200000).sort((a, b) => a.time - b.time);
+      let cryptoData = assets.data.filter(element => element.time >= 1559347200000).sort((a, b) => a.time - b.time);
       const btcLabels = cryptoData.map(element => moment(element.date).format('MMMM DD YYYY'));
       const btcData = cryptoData.map(element => element.priceUsd);
       const chartData = {
