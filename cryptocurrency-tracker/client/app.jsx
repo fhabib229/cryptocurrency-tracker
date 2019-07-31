@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://api.coindesk.com/v1/bpi/historical/close.json?start=2017-12-01&end=2019-01-01')
+    axios.get('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1')
       .then(result => {
         this.setState({
           isLoaded: true,
@@ -55,8 +55,9 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>
     } else {
-      const btcLabels = Object.keys(data.bpi).map(date => moment(date).format('MMMM DD YYYY'));
-      const btcData = Object.values(data.bpi);
+      let cryptoData = data.data.sort((a, b) => a.date - b.date);
+      const btcLabels = cryptoData.map(element => moment(element.date).format('MMMM DD YYYY'));
+      const btcData = cryptoData.map(element => element.priceUsd);
       const chartData = {
         labels:
           btcLabels,
