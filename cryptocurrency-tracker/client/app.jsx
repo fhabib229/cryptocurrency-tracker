@@ -55,7 +55,7 @@ class App extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>
     } else {
-      let cryptoData = data.data.sort((a, b) => a.date - b.date);
+      let cryptoData = data.data.filter(element => element.time >= 1559347200000).sort((a, b) => a.time - b.time);
       const btcLabels = cryptoData.map(element => moment(element.date).format('MMMM DD YYYY'));
       const btcData = cryptoData.map(element => element.priceUsd);
       const chartData = {
@@ -63,8 +63,8 @@ class App extends React.Component {
           btcLabels,
         datasets: [{
           label: 'Bitcoin Price(BTC)',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgb(12, 115, 218)',
+          borderColor: 'rgb(58, 59, 60)',
           data:
             btcData
         }]
