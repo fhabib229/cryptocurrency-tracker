@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Chart from 'chart.js';
 import moment from 'moment';
 import { Line } from 'react-chartjs-2';
 
@@ -83,5 +81,5 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('price-data'));
+export default App;
 
