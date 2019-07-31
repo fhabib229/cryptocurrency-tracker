@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Grid } from 'semantic-ui-react';
+import CoinListEntry from './CoinListEntry.jsx';
 
 class CoinList extends React.Component {
   constructor(props) {
@@ -29,7 +30,20 @@ class CoinList extends React.Component {
   }
 
   render() {
-    return <div>Testing </div>
+    const { assets, isLoaded, error } = this.state;
+    if (error) {
+      return <div>Error....{error.message}</div>
+    } else if (!isLoaded) {
+      return <div>Loading...</div>
+    } else {
+      return (
+        <Grid celled="internally">
+          {assets.data.map(coin =>
+            <CoinListEntry key={coin.rank} asset={coin} />
+          )}
+        </Grid>
+      );
+    }
   }
 }
 
