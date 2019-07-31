@@ -74,7 +74,7 @@ class App extends React.Component {
           <Line
             data= {chartData}
             height={600}
-            width={2000}
+            width={1000}
             options={options}
           />
         </div>
