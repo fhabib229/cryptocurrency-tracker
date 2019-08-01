@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Grid } from 'semantic-ui-react';
 import CoinListEntry from './CoinListEntry.jsx';
 
+//TODO:
+//  Render chart of cryptocurrency selected by the user
+
 class CoinList extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +45,7 @@ class CoinList extends React.Component {
             <Grid.Column width={1}>
               Rank
             </Grid.Column>
-            <Grid.Column width={2}>
+            <Grid.Column width={5}>
               Name
             </Grid.Column>
             <Grid.Column width={2}>
