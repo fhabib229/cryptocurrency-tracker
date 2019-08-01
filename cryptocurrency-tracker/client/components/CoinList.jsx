@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Dimmer, Loader } from 'semantic-ui-react';
 import CoinListEntry from './CoinListEntry.jsx';
 
 //TODO:
@@ -37,7 +37,11 @@ class CoinList extends React.Component {
     if (error) {
       return <div>Error....{error.message}</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>
+      return (
+        <Dimmer active>
+          <Loader>Loading</Loader>
+        </Dimmer>
+      );
     } else {
       return (
         <Grid celled="internally">

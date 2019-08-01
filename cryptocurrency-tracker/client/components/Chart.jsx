@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { Line } from 'react-chartjs-2';
+import { Dimmer, Loader } from 'semantic-ui-react';
 
 class Chart extends React.Component {
   constructor(props) {
@@ -50,7 +51,11 @@ class Chart extends React.Component {
     if (error) {
       return <div>Error....{error.message}</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>
+      return (
+        <Dimmer active>
+          <Loader>Loading</Loader>
+        </Dimmer>
+      );
     } else {
       let cryptoData = assets.data.filter(element => element.time >= 1559347200000).sort((a, b) => a.time - b.time);
       const btcLabels = cryptoData.map(element => moment(element.date).format('MMMM DD YYYY'));
