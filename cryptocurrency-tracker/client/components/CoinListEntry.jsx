@@ -1,9 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import moneyFormat from '../helper.js';
+import { moneyFormat, capitalize } from '../helper.js';
 
 //TODO:
-//  Convert Market Cap, Supply, and Volume to Scientific Notation
 //  Capitalize first letter in name(ID)
 //  Include symbol & icon in Name column
 //  Color positive changes green and negative changes in red
@@ -17,7 +16,7 @@ const CoinListEntry = (props) => {
         {props.asset.rank}
       </Grid.Column>
       <Grid.Column width={2}>
-        {props.asset.id}
+        {capitalize(props.asset.id)}
       </Grid.Column>
       <Grid.Column width={2}>
         ${Number(props.asset.priceUsd).toFixed(2)}

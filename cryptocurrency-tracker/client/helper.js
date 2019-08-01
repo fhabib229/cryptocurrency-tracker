@@ -10,4 +10,8 @@ const moneyFormat = (value) => {
     : Number(value).toFixed(2);
 }
 
-export default moneyFormat;
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export { moneyFormat, capitalize };
