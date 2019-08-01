@@ -38,6 +38,29 @@ class CoinList extends React.Component {
     } else {
       return (
         <Grid celled="internally">
+          <Grid.Row>
+            <Grid.Column width={1}>
+              Rank
+            </Grid.Column>
+            <Grid.Column width={2}>
+              Name
+            </Grid.Column>
+            <Grid.Column width={2}>
+              Price
+            </Grid.Column>
+            <Grid.Column width={2}>
+              Market Cap
+            </Grid.Column>
+            <Grid.Column width={2}>
+              Supply
+            </Grid.Column>
+            <Grid.Column width={2}>
+              Volume (24Hr)
+            </Grid.Column>
+            <Grid.Column width={2}>
+              Change (24Hr)
+            </Grid.Column>
+          </Grid.Row>
           {assets.data.map(coin =>
             <CoinListEntry key={coin.rank} asset={coin} />
           )}
