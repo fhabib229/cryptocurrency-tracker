@@ -4,6 +4,10 @@ import moment from 'moment';
 import { Line } from 'react-chartjs-2';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
+//TODO:
+//  Render chart of selected cryptocurrency from coin list
+//  Styling: background color for chart
+
 class Chart extends React.Component {
   constructor(props) {
     super(props);

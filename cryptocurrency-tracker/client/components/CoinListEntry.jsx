@@ -3,8 +3,7 @@ import { Grid } from 'semantic-ui-react';
 import { moneyFormat, capitalize, colorChange } from '../helper.js';
 
 //TODO:
-//  Limit rendering to 10 currencies, w/ option to expand (Show More)
-//  Style the entries (background color, special font, etc)
+//  Styling: (background color, special font, etc)
 
 const CoinListEntry = (props) => {
   return (
