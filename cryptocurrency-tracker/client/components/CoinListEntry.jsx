@@ -1,9 +1,8 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import { moneyFormat, capitalize } from '../helper.js';
+import { moneyFormat, capitalize, colorChange } from '../helper.js';
 
 //TODO:
-//  Color positive changes green and negative changes in red
 //  Limit rendering to 10 currencies, w/ option to expand (Show More)
 //  Style the entries (background color, special font, etc)
 
@@ -29,7 +28,7 @@ const CoinListEntry = (props) => {
         ${moneyFormat(props.asset.volumeUsd24Hr)}
       </Grid.Column>
       <Grid.Column width={2}>
-        {Number(props.asset.changePercent24Hr).toFixed(2)}%
+        {colorChange(Number(props.asset.changePercent24Hr).toFixed(2))}
       </Grid.Column>
     </Grid.Row>
   );

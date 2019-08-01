@@ -1,3 +1,5 @@
+import React from 'react';
+
 const moneyFormat = (value) => {
   // Nine or more zeroes for billions
 
@@ -14,4 +16,12 @@ const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export { moneyFormat, capitalize };
+const colorChange = (value) => {
+  if (value >= 0) {
+    return <span id='positive'>{value}%</span>
+  } else {
+    return <span id='negative'>{value}%</span>
+  }
+}
+
+export { moneyFormat, capitalize, colorChange };
