@@ -7,8 +7,26 @@ import CoinListEntry from './CoinListEntry.jsx';
 //TODO:
 //  Render chart of cryptocurrency selected by the user
 //  Styling:
-//
-//
+//    Styled span for headers
+//    Styled span for button
+//    Styled div for entire table
+
+const StyledButton = styled.div`
+  text-align: center;
+`;
+
+const StyledGrid = styled.div`
+  font-family: Monaco, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: white;
+  text-align: left;
+  padding: 1em;
+`;
+
+const StyledHeader = styled.span`
+  font-size: 13px;
+  font-weight: bold;
+`;
 
 class CoinList extends React.Component {
   constructor(props) {
@@ -62,45 +80,47 @@ class CoinList extends React.Component {
       );
     } else {
       return (
-        <div>
+        <StyledGrid>
           <Grid celled="internally">
             <Grid.Row>
               <Grid.Column width={1}>
-                Rank
+              <StyledHeader>Rank</StyledHeader>
               </Grid.Column>
               <Grid.Column width={5}>
-                Name
+              <StyledHeader> Name</StyledHeader>
               </Grid.Column>
               <Grid.Column width={2}>
-                Price
+              <StyledHeader> Price</StyledHeader>
               </Grid.Column>
               <Grid.Column width={2}>
-                Market Cap
+              <StyledHeader>Market Cap</StyledHeader>
               </Grid.Column>
               <Grid.Column width={2}>
-                Supply
+              <StyledHeader>Supply</StyledHeader>
               </Grid.Column>
               <Grid.Column width={2}>
-                Volume (24Hr)
+              <StyledHeader>Volume (24Hr)</StyledHeader>
               </Grid.Column>
               <Grid.Column width={2}>
-                Change (24Hr)
+              <StyledHeader>Change (24Hr)</StyledHeader>
               </Grid.Column>
             </Grid.Row>
             {assets.data.slice(0, itemsToShow).map((coin, i) =>
               <CoinListEntry key={i} asset={coin} />
             )}
           </Grid>
-          <Button onClick={this.viewMore}>
-            {expanded ?
-              (
-                <span>View Less</span>
-              ) : (
-                <span>View More</span>
-              )
-            }
-          </Button>
-        </div>
+          <StyledButton>
+            <Button onClick={this.viewMore}>
+              {expanded ?
+                (
+                  <span>View Less</span>
+                ) : (
+                  <span>View More</span>
+                )
+              }
+            </Button>
+          </StyledButton>
+        </StyledGrid>
       );
     }
   }
