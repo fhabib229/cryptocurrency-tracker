@@ -1,10 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import Chart from './components/Chart.jsx';
 import CoinList from './components/CoinList.jsx';
 
 //TODO:
 //  Refactor code?
 //  Deploy to Heroku
+
+const StyledBackground= styled.div`
+  background: linear-gradient(#000000, #330066);
+  padding: 1em;
+`;
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,10 +22,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <StyledBackground>
         <Chart />
         <CoinList />
-      </div>
+      </StyledBackground>
     );
   }
 }
