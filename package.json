@@ -5,7 +5,7 @@
   "main": "./server/server.js",
   "scripts": {
     "react:dev": "webpack -d --watch",
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "author": "Faris Habib",
   "license": "ISC",
