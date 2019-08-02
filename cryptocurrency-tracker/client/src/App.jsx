@@ -8,7 +8,8 @@ import CoinList from './components/CoinList.jsx';
 //  Deploy to Heroku
 
 const StyledBackground= styled.div`
-  background: linear-gradient(#000000, #190033);
+  background: linear-gradient(#000000, #330066);
+  padding: 1em;
 `;
 class App extends React.Component {
   constructor(props) {

@@ -17,17 +17,37 @@ class Chart extends React.Component {
       error: null,
       assets: {},
       options: {
+        maintainAspectRatio: false,
+        title: {
+          display: true,
+          text: 'Bitcoin Price (BTC)',
+          fontColor: '#FFFFFF'
+        },
+        legend: {
+          labels: {
+            fontColor: '#FFFFFF'
+          }
+        },
         scales: {
           xAxes: [{
             ticks: {
               source: 'data',
-              autoSkip: true
+              autoSkip: true,
+              fontColor: '#FFFFFF'
             }
           }],
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'BTC Price ($USD)'
+              labelString: 'BTC Price ($USD)',
+              fontColor: '#FFFFFF'
+            },
+            ticks: {
+              fontColor: '#FFFFFF'
+            },
+            gridLines: {
+              display: true,
+              color: '#FFFFFF'
             }
           }]
         }
@@ -69,9 +89,8 @@ class Chart extends React.Component {
         labels:
           btcLabels,
         datasets: [{
-          label: 'Bitcoin Price(BTC)',
-          backgroundColor: 'rgb(12, 115, 218)',
-          borderColor: 'rgb(58, 59, 60)',
+          label: '3M',
+          borderColor: '#9915FF',
           data:
             btcData
         }]
@@ -80,8 +99,8 @@ class Chart extends React.Component {
         <div>
           <Line
             data= {chartData}
-            height={600}
-            width={1000}
+            height={500}
+            width={500}
             options={options}
           />
         </div>
