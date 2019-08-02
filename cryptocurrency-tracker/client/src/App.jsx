@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import Chart from './components/Chart.jsx';
 import CoinList from './components/CoinList.jsx';
 

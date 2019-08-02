@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
+import styled from 'styled-components';
 import { moneyFormat, capitalize, colorChange } from '../lib/helper.js';
 
 //TODO:

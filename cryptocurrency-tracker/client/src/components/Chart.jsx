@@ -3,6 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { Line } from 'react-chartjs-2';
 import { Dimmer, Loader } from 'semantic-ui-react';
+import styled from 'styled-components';
 
 //TODO:
 //  Render chart of selected cryptocurrency from coin list

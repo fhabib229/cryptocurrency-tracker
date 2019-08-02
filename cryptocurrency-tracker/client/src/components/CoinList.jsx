@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import { Grid, Dimmer, Loader, Button } from 'semantic-ui-react';
+import styled from 'styled-components';
 import CoinListEntry from './CoinListEntry.jsx';
 
 //TODO:
 //  Render chart of cryptocurrency selected by the user
-//  Styling: position button to center, color background and modify font
+//  Styling:
+//
+//
 
 class CoinList extends React.Component {
   constructor(props) {
